@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CS 1130 – Introduction to Computing</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><div class="wrap">
+<h1>CS 1130 – Introduction to Computing</h1>
+<p>by John Roy A. Geralde – Class Instructor</p>
+</div></header>
+
+<nav aria-label="Main"><div class="wrap" id="nav">
+<a href="#home" data-s="home">Home</a>
+<a href="#conversion" data-s="conversion">#1 Conversion</a>
+<a href="#tax" data-s="tax">#2 Income Tax</a>
+<a href="#looping" data-s="looping">#3 Looping</a>
+<a href="#payroll" data-s="payroll">#4 Payroll</a>
+</div></nav>
+
+<main><div class="wrap">
+
+<section id="home">
+<div class="card">
+<h2>Welcome</h2>
+<p>This is the website for viewing HTML, Javascript Programming and CSS Examples for students who are taking the Introduction to Computing Class (CS 1130) under the Computer Studies Division, School of Arts and Sciences of the Ateneo de Davao University. Simple Examples involving Basic HTML, Javascript Functions, User Interaction, Mathematical Calculations, Simple Styling and Page Layouts are shown.</p>
+</div>
+<div class="card">
+<h2>Student Assignments</h2>
+<ul class="assign-list">
+<li><a href="#conversion"><strong>Assignment #1 – Conversion</strong><br><span class="muted">Celsius to Fahrenheit, Fahrenheit to Celsius, Meters to Feet, Feet to Meters</span></a></li>
+<li><a href="#tax"><strong>Assignment #2 – Income Tax Calculator</strong></a></li>
+<li><a href="#looping"><strong>Assignment #3 – Looping</strong><br><span class="muted">Factorial (While Loop), Sum (Do While Loop) and Average (For Loop) of First N Natural Numbers</span></a></li>
+<li><a href="#payroll"><strong>Assignment #4 – Simple Payroll</strong></a></li>
+</ul>
+</div>
+</section>
+
+<section id="conversion">
+<h2>Assignment #1 – Conversion</h2>
+<div class="card">
+<h3 style="margin-top:0">Temperature</h3>
+<div class="row">
+<label>Value<input type="number" id="tempIn" step="any" placeholder="e.g. 100"></label>
+<label>Convert<select id="tempMode">
+<option value="c2f">Celsius to Fahrenheit</option>
+<option value="f2c">Fahrenheit to Celsius</option>
+</select></label>
+<button type="button" id="tempBtn">Convert</button>
+</div>
+<div class="result" id="tempOut" aria-live="polite"></div>
+</div>
+<div class="card">
+<h3 style="margin-top:0">Length</h3>
+<div class="row">
+<label>Value<input type="number" id="lenIn" step="any" placeholder="e.g. 10"></label>
+<label>Convert<select id="lenMode">
+<option value="m2ft">Meters to Feet</option>
+<option value="ft2m">Feet to Meters</option>
+</select></label>
+<button type="button" id="lenBtn">Convert</button>
+</div>
+<div class="result" id="lenOut" aria-live="polite"></div>
+</div>
+</section>
+
+<section id="tax">
+<h2>Assignment #2 – Income Tax Calculator</h2>
+<div class="card">
+<p>Enter the net taxable income to compute the income tax (Income Tax = Basic Tax + Rate × excess).</p>
+<div class="row">
+<label>Net taxable income (₱)<input type="number" id="taxIn" min="0" step="any" placeholder="e.g. 520000"></label>
+<button type="button" id="taxBtn">Compute tax</button>
+</div>
+<div class="result" id="taxOut" aria-live="polite"></div>
+</div>
+<div class="card scroll">
+<h3 style="margin-top:0">Tax table</h3>
+<table>
+<thead><tr><th>Over</th><th>But not over</th><th>Basic tax + rate</th></tr></thead>
+<tbody>
+<tr><td>–</td><td>₱250,000</td><td>0%</td></tr>
+<tr><td>₱250,000</td><td>₱400,000</td><td>20% of the excess over ₱250,000</td></tr>
+<tr><td>₱400,000</td><td>₱800,000</td><td>₱30,000 + 25% of the excess over ₱400,000</td></tr>
+<tr><td>₱800,000</td><td>₱2,000,000</td><td>₱130,000 + 30% of the excess over ₱800,000</td></tr>
+<tr><td>₱2,000,000</td><td>₱8,000,000</td><td>₱490,000 + 32% of the excess over ₱2,000,000</td></tr>
+<tr><td>₱8,000,000</td><td>–</td><td>₱2,410,000 + 35% of the excess over ₱8,000,000</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section id="looping">
+<h2>Assignment #3 – Looping</h2>
+<div class="card">
+<div class="row">
+<label>Enter n (a positive whole number)<input type="number" id="nIn" min="1" step="1" placeholder="e.g. 5"></label>
+</div>
+</div>
+<div class="card">
+<h3 style="margin-top:0">The nth factorial (While Loop)</h3>
+<button type="button" id="facBtn">Compute factorial</button>
+<div class="result" id="facOut" aria-live="polite"></div>
+</div>
+<div class="card">
+<h3 style="margin-top:0">Sum of the first n numbers (Do While Loop)</h3>
+<button type="button" id="sumBtn">Compute sum</button>
+<div class="result" id="sumOut" aria-live="polite"></div>
+</div>
+<div class="card">
+<h3 style="margin-top:0">Average of the first n numbers (For Loop)</h3>
+<button type="button" id="avgBtn">Compute average</button>
+<div class="result" id="avgOut" aria-live="polite"></div>
+</div>
+</section>
+
+<section id="payroll">
+<h2>Assignment #4 – Simple Payroll</h2>
+<div class="card">
+<h3 style="margin-top:0">Add employee</h3>
+<div class="row">
+<label>Employee name<input type="text" id="pName" autocomplete="off"></label>
+<label>Days worked<input type="number" id="pDays" min="0" step="any"></label>
+<label>Daily rate (₱)<input type="number" id="pRate" min="0" step="any"></label>
+<label>Deduction amount (₱)<input type="number" id="pDed" min="0" step="any"></label>
+<button type="button" id="addBtn">Add</button>
+</div>
+<div class="result" id="payMsg" aria-live="polite"></div>
+</div>
+<div class="card">
+<h3 style="margin-top:0">Delete employee</h3>
+<div class="row">
+<label>Line number to delete<input type="number" id="delNo" min="1" step="1"></label>
+<button type="button" class="danger" id="delBtn">Delete</button>
+</div>
+</div>
+<div class="card scroll">
+<h3 style="margin-top:0">Payroll list</h3>
+<table>
+<thead><tr><th>No.</th><th>Employee name</th><th class="num">Days worked</th><th class="num">Daily rate</th><th class="num">Gross pay</th><th class="num">Deduction</th><th class="num">Net pay</th></tr></thead>
+<tbody id="payBody"><tr><td colspan="7" class="muted">No employees yet.</td></tr></tbody>
+</table>
+</div>
+</section>
+
+</div></main>
+<footer>CS 1130 – Introduction to Computing · Ateneo de Davao University</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
